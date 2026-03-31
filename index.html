@@ -855,11 +855,9 @@
       transition: background .3s, box-shadow .3s
     }
 
-    @media (hover: hover) {
-      .timeline-item:hover .timeline-dot {
-        background: var(--accent);
-        box-shadow: 0 0 14px rgba(37, 99, 235, .45)
-      }
+    .timeline-item:hover .timeline-dot {
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(37, 99, 235, .45)
     }
 
     .timeline-date {
@@ -1698,13 +1696,11 @@
       transform: scale(2.5);
     }
 
-    /* ── TIMELINE DOT PULSE on hover (desktop only) ── */
-    @media (hover: hover) {
-      .timeline-item:hover .timeline-dot {
-        background: var(--accent);
-        box-shadow: 0 0 0 4px rgba(37, 99, 235, .15), 0 0 14px rgba(37, 99, 235, .45);
-        animation: dotPulse 1s ease-out;
-      }
+    /* ── TIMELINE DOT PULSE on hover ── */
+    .timeline-item:hover .timeline-dot {
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, .15), 0 0 14px rgba(37, 99, 235, .45);
+      animation: dotPulse 1s ease-out;
     }
 
     @keyframes dotPulse {
@@ -3453,9 +3449,8 @@
       <h2 class="section-title reveal">Let's <em>connect</em></h2>
       <p class="reveal" style="color:rgba(247,244,239,.55);font-size:1rem">Open to cloud engineering, DevOps,
         infrastructure and academic roles. Always happy to chat about cloud, distributed systems, or education.</p>
-      <a href="/cdn-cgi/l/email-protection#bccfd4cbd9d1d3d9c8d4ddd2c88c88fcdbd1ddd5d092dfd3d1" class="contact-email">
-        <span class="__cf_email__"
-          data-cfemail="07746f70626a6862736f666973373347606a666e6b2964686a">[email&#160;protected]</span>
+      <a href="mailto:shwemoethant04@gmail.com" class="contact-email">
+        shwemoethant04@gmail.com
       </a>
       <div class="contact-links reveal">
         <a href="https://linkedin.com/in/shwemoethant" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
@@ -3470,7 +3465,6 @@
   </footer>
 
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/animejs@4.0.0/lib/anime.iife.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -3986,4 +3980,14 @@
             if (link) link.classList.add('active');
           }
         });
-  
+        /* Back top visibility */
+        if (backTop) backTop.classList.toggle('visible', window.scrollY > 600);
+      }
+      window.addEventListener('scroll', updateActiveNav, { passive: true });
+      updateActiveNav();
+
+    });
+  </script>
+</body>
+
+</html>
